@@ -3,7 +3,7 @@ const { WebSocketServer } = require('ws')
 const https = require('https')
 
 // 在本地 8080 端口启动 WebSocket 服务
-const wss = new WebSocketServer({ port: 8080 })
+const wss = new WebSocketServer({ port: process.env.PORT || 3000 })
 
 // 用于存储在线客户端连接（Key: userId/doctorId, Value: wsSocket）
 const clients = new Map()
